@@ -1,1 +1,34 @@
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.pdb
+*.nupkg
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio Code
+.vscode/
+
+## Rider
+.idea/
+
+## C#
+project.assets.json
+*.csproj.user
+*.log
+*.ps1
+*.psd1
+*.psm1
+packages/
+publish/
+
+## .NET Core / .NET 5+
+**/bin/
+**/obj/
+**/*.dll
+**/*.exe
+
+## Environment variables
 .env
+.env.*
