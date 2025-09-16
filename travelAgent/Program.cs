@@ -3,8 +3,13 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using travelAgent.classes;
 using Microsoft.OpenApi.Models;
+using DotNetEnv; // הוסף את השורה הזו
+
+DotNetEnv.Env.Load(); // העבר את השורה הזו לכאן
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // הוספת שירות CORS
 builder.Services.AddCors(options =>
@@ -34,7 +39,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<WeatherService>(provider =>
     new WeatherService(
         provider.GetRequiredService<HttpClient>(),
-        builder.Configuration["WeatherApi:ApiKey"]
+        builder.Configuration["WeatherApi:ApiKey"] ?? Environment.GetEnvironmentVariable("WEATHER_API_KEY")
     ));
 builder.Services.AddScoped<ConversationManager>();
 
