@@ -6,7 +6,7 @@ using Microsoft.OpenApi.Models;
 using DotNetEnv; // הוסף את השורה הזו
 
 DotNetEnv.Env.Load(); // העבר את השורה הזו לכאן
-
+    
 var builder = WebApplication.CreateBuilder(args);
 
 
